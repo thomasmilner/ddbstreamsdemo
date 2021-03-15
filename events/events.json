@@ -1,0 +1,33 @@
+{
+    "Records": [
+      {
+        "eventID": "1",
+        "eventName": "INSERT",
+        "eventVersion": "1.0",
+        "dynamodb": {
+          "Keys": {
+            "pk1": {
+              "S": "PROD#0001"
+            },
+            "sk1": {
+              "S": "2020-01-12T20:34:59.273101"
+            }
+          },
+          "NewImage": {
+            "Message": {
+              "S": "New item!"
+            },
+            "Id": {
+              "N": "101"
+            }
+          },
+          "StreamViewType": "KEYS_ONLY",
+          "SequenceNumber": "111",
+          "SizeBytes": 26
+        },
+        "awsRegion": "eu-west-1",
+        "eventSourceARN": "arn:aws:dynamodb:eu-west-1:565877345391:table/streamsdemo/stream/2021-03-11T15:09:37.822",
+        "eventSource": "aws:dynamodb"
+      }
+    ]
+  }
