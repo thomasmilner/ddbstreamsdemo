@@ -18,6 +18,9 @@ AWS SAM application that processes events from a DynamoDB stream and writes them
                                       └──────────────┘
 ```
 
+## Requirements
+Install AWS SAM CLI by following [their installation instructions](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
+
 ## Files
 ../ddbstreamsdemo/template.yml - SAM template to create DynamoDB table, stream and Lambda to process stream. Lambda is written in Python 3.8 runtime
 ../ddbstreamsdemo/streamsdemo/streamsdemo.py - Lambda code
