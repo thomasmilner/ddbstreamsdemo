@@ -4,10 +4,11 @@ from datetime import datetime
 #import time
 
 dynamodb = boto3.client('dynamodb')
+tableName = 'streamsdemo'
 
-for i in range(1,10):
+for i in range(1,11):
     orderdatetime = str(datetime.now())
-    for j in range(1,10):
+    for j in range(1,11):
         productKey = 'PROD#000' + str(j)
         item = {
         "pk1": {
@@ -18,7 +19,7 @@ for i in range(1,10):
         }
         }
         response = dynamodb.put_item(
-            TableName='sam-streamsdemo4-DynamoDBTable-X9KKAPOHE1J4',
+            TableName=tableName,
             Item=item
             )
         #time.sleep(1)
