@@ -3,8 +3,6 @@ import boto3
 import traceback
 from botocore.exceptions import ClientError
 
-#print('Loading function')
-
 def updateDDBTable(tableName,pkValue,counterKey,counter):
     dynamodb = boto3.resource('dynamodb')
      
@@ -31,11 +29,11 @@ def updateCounter(tableName,pkValue,skValue,counter):
     counterKey = [skValue[0:10], skValue[0:8]+ "00",skValue[0:5]+ "00-00","0000-00-00"]
     #persist changes to table
     updateDDBTable(tableName,pkValue,counterKey,counter)
-            
+    
 def parseStreamArn(streamARN):
     tableName = streamARN.split(':')[5].split('/')[1]
     return(tableName)
-    
+
 def _lambda_handler(event, context):
 
     records = event['Records']
@@ -49,8 +47,9 @@ def _lambda_handler(event, context):
         pkValue = record['dynamodb']['Keys']['pk1']['S']
         skValue = record['dynamodb']['Keys']['sk1']['S']
         #print(keyValue)
-            
+        
         if (event_name == 'INSERT') and "sales_cnt" not in record['dynamodb']["NewImage"]:
+            print(event_name)
             updateCounter(tableName,pkValue,skValue,1)
 
         #if (event_name == 'REMOVE') and "sales_cnt" not in record['dynamodb']["NewImage"]:
