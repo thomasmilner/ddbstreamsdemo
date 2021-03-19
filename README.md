@@ -2,9 +2,10 @@
 
 AWS SAM application that processes events from a DynamoDB stream and writes them back to a DynamoDB table.
 
+'''
             ┌──────────────┐          ┌─────────────┐
             │   DynamoDB   │          │             │
-'───────────►│    Table     ├─────────►│    Streams  │
+───────────►│    Table     ├─────────►│    Streams  │
             │              │          │             │
             └──────▲───────┘          └──────┬──────┘
                    │                         │
@@ -15,6 +16,7 @@ AWS SAM application that processes events from a DynamoDB stream and writes them
                    └──────────────────┤    Lambda    │
                                       │              │
                                       └──────────────┘
+'''
 
 ##Files
 ../ddbstreamsdemo/template.yml - SAM template to create DynamoDB table, stream and Lambda to process stream. Lambda is written in Python 3.8 runtime
