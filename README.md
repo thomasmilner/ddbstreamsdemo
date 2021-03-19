@@ -4,7 +4,7 @@ AWS SAM application that processes events from a DynamoDB stream and writes them
 
             ┌──────────────┐          ┌─────────────┐
             │   DynamoDB   │          │             │
-───────────►│    Table     ├─────────►│    Streams  │
+'───────────►│    Table     ├─────────►│    Streams  │
             │              │          │             │
             └──────▲───────┘          └──────┬──────┘
                    │                         │
