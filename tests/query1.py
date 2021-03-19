@@ -5,7 +5,7 @@ from datetime import datetime
 
 dynamodb = boto3.client('dynamodb')
 
-tableName = 'sam-streamsdemo5-DynamoDBTable-1SFVAPD7TM9WQ'
+tableName = 'streamsdemo'
 
 print('query1 start' + str(datetime.now()))
 response = dynamodb.query(
